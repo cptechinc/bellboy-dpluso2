@@ -2706,7 +2706,7 @@
 	function add_qnote($sessionID, Qnote $qnote, $debug = false) {
 		$q = (new QueryBuilder())->table('qnote');
 		$q->mode('insert');
-		$qnote->recno = get_maxqnoterecnbr($qnote->sessionid, $qnote->key1, $qnote->key2, $qnote->rectype) + 1;
+		$qnote->set('recno', get_maxqnoterecnbr($qnote->sessionid, $qnote->key1, $qnote->key2, $qnote->rectype) + 1);
 
 		foreach ($qnote->_toArray() as $property => $value) {
 			$q->set($property, $value);
