@@ -95,7 +95,7 @@
 			$note->set('form2', $input->post->form2 ? "Y" : "N");
 			$note->set('form3', $input->post->form3 ? "Y" : "N");
 			$note->set('form4', $input->post->form4 ? "Y" : "N");
-			$note->set('form5', ($note->rectype == Qnote::get_qnotetype('sales-order')) ? '' : ($input->post->form5 ? "Y" : "N"));
+			$note->set('form5', ($note->rectype == Qnote::get_qnotetype('sales-orders')) ? '' : ($input->post->form5 ? "Y" : "N"));
 			$note->set('notefld', addslashes($input->post->text('note')));
 			$session->sql = $note->update();
 
@@ -109,7 +109,7 @@
 				"FORM3=$note->form3",
 				"FORM4=$note->form4",
 			);
-			if ($note->rectype != Qnote::get_qnotetype('sales-order')) {
+			if ($note->rectype != Qnote::get_qnotetype('sales-orders')) {
 				$data['FORM5'] = $note->form5;
 			}
 			break;
@@ -123,7 +123,7 @@
 			$note->set('form2', $input->post->form2 ? "Y" : "N");
 			$note->set('form3', $input->post->form3 ? "Y" : "N");
 			$note->set('form4', $input->post->form4 ? "Y" : "N");
-			$note->set('form5', ($note->rectype == Qnote::get_qnotetype('sales-order')) ? '' : ($input->post->form5 ? "Y" : "N"));
+			$note->set('form5', ($note->rectype == Qnote::get_qnotetype('sales-orders')) ? '' : ($input->post->form5 ? "Y" : "N"));
 			$note->set('notefld', addslashes($input->post->text('note')));
 			$session->sql = $note->create();
 
@@ -139,12 +139,12 @@
 				"FORM5=$note->form5"
 			);
 			if ($note->key2 > 0) {
-				if ($note->rectype == 'SORD') {
+				if ($note->rectype == Qnote::get_qnotetype('sales-orders')) {
 					$orderdetail = SalesOrderDetail::load(session_id(), $note->key1, $note->key2);
 					$orderdetail->set('hasnotes', 'Y');
 					$session->sql = $orderdetail->update();
 				}
-				if ($note->rectype == 'QUOT') {
+				if ($note->rectype == Qnote::get_qnotetype('quotes')) {
 					$quotedetail = QuoteDetail::load(session_id(), $note->key1, $note->key2);
 					$quotedetail->set('hasnotes', 'Y');
 					$session->sql = $quotedetail->update();
