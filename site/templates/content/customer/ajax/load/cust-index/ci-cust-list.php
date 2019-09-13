@@ -9,18 +9,19 @@
 	$resultscount = $custindex->count_searchcustindex($input->get->text('q'));
 	$paginator = new Paginator($custindex->pagenbr, $resultscount, $custindex->pageurl, 'cust-index', $custindex->ajaxdata);
 ?>
-
 <div id="cust-results">
+	<?php if ($config->cptechcustomer != 'bellboy') : ?>
 		<div class="form-group">
-	<?php if ($appconfig->allow_customeradd) : ?>
+		<?php if ($appconfig->allow_customeradd) : ?>
 			<a href="<?= $config->pages->customer.'add/'; ?>" class="btn btn-primary">
 				<i class="fa fa-user-plus" aria-hidden="true"></i>&ensp;Add Customer
 			</a>
-	<?php endif; ?>
+		<?php endif; ?>
 			<a href="<?= $config->pages->customer.'add-prospect/'; ?>" class="btn btn-primary">
 				<i class="fa fa-user" aria-hidden="true"></i>&ensp;Add Prospect
 			</a>
 		</div>
+	<?php endif; ?>
 	<?= $paginator->generate_showonpage(); ?>
 	<table id="cust-index" class="table table-striped table-bordered">
 		<thead>
