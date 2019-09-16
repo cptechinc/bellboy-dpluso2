@@ -869,11 +869,15 @@
 				$q->order($q->generate_orderby($orderby));
 			}
 			$q->group('custid');
+		} elseif (DplusWire::wire('config')->cptechcustomer == 'bellboy') {
+			if (!empty($orderby)) {
+				$q->order($q->generate_orderby($orderby));
+			}
+			$q->group('custid, shiptoid, addr1');
 		} else {
 			if (!empty($orderby)) {
 				$q->order($q->generate_orderby($orderby));
 			} else {
-
 				$q->order($q->expr('custid <> []', [$search]));
 			}
 		}
