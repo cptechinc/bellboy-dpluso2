@@ -5,9 +5,9 @@
 			<div class="col-sm-4 sm-padding">Item / Description</div>
 			<div class="col-sm-1 text-left sm-padding">WH</div>
 			<div class="col-sm-1 text-right sm-padding">Qty</div>
-			<div class="col-sm-2 text-center sm-padding">Price</div>
-			<div class="col-sm-2 sm-padding">Total</div>
-			<div class="col-sm-2 sm-padding">Rqst Date</div>
+			<div class="col-sm-2 text-right sm-padding">Price</div>
+			<div class="col-sm-2 text-right sm-padding">Total</div>
+			<div class="col-sm-2 text-right sm-padding">Rqst Date</div>
 		</div>
 		<div class="col-md-3 sm-padding">
 			<div class="row">
