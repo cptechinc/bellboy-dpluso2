@@ -5,10 +5,10 @@
             <div class="col-sm-1 sm-padding"><input type="checkbox" id="select-all">&nbsp;&nbsp;</div>
 			<div class="col-sm-3 sm-padding">Item / Description</div>
 			<div class="col-sm-1 text-left sm-padding">WH</div>
-			<div class="col-sm-1 text-right ">Qty</div>
-			<div class="col-sm-2 text-center sm-padding">Price</div>
-			<div class="col-sm-2 sm-padding">Total</div>
-			<div class="col-sm-2 sm-padding">Rqst Date</div>
+			<div class="col-sm-1 text-right sm-padding">Qty</div>
+			<div class="col-sm-2 text-right sm-padding">Price</div>
+			<div class="col-sm-2 text-right sm-padding">Total</div>
+			<div class="col-sm-2 text-right sm-padding">Rqst Date</div>
 		</div>
 		<div class="col-md-3 sm-padding">
 			<div class="row">
@@ -82,11 +82,11 @@
 					<div class="row">
 						<div class="col-xs-6 sm-padding">
 							<h4 class="visible-xs-block">Details</h4>
-							<!-- View Detail Link --> 
+							<!-- View Detail Link -->
 							<a href="<?= $editquotedisplay->generate_viewdetailURL($quote, $detail); ?>" class="h3 view-item-details detail-line-icon" data-itemid="<?= $detail->itemid; ?>" data-kit="<?= $detail->kititemflag; ?>" data-modal="<?= $editquotedisplay->modal; ?>">
 								<i class="fa fa-info-circle" aria-hidden="true"></i>
 							</a>
-							<!-- Dplus Notes Link --> 
+							<!-- Dplus Notes Link -->
 							<?php if ($detail->has_notes()) : ?>
 								<a href="<?= $editquotedisplay->generate_request_dplusnotesURL($quote, $detail->linenbr); ?>" class="load-notes" title="View Order Notes" data-modal="<?= $editquotedisplay->modal; ?>">
 									<i class="material-icons md-36" aria-hidden="true">&#xE0B9;</i>
@@ -99,17 +99,17 @@
 						</div>
 						<div class="col-xs-6 sm-padding">
 							<h4 class="visible-xs-block">Edit</h4>
-							<!-- Save Detail Button --> 
+							<!-- Save Detail Button -->
 							<button type="submit" name="button" class="btn btn-sm btn-info detail-line-icon" title="Save Changes">
 								<span class="fa fa-floppy-o"></span> <span class="sr-only">Save Line</span>
 							</button>
-							<!-- Edit Detail Link --> 
+							<!-- Edit Detail Link -->
 							<a href="<?= $editquotedisplay->generate_vieweditdetailURL($quote, $detail); ?>" class="update-line" data-kit="<?= $detail->kititemflag; ?>" data-itemid="<?= $detail->itemid; ?>" data-custid="<?= $quote->custid; ?>" aria-label="Edit Detail Line">
 								<button class="btn btn-sm btn-warning detail-line-icon">
 									<span class="fa fa-pencil"></span>
 								</button>
 							</a>
-							<!-- Remove Detail Link --> 
+							<!-- Remove Detail Link -->
 							<a href="<?= $editquotedisplay->generate_removedetailURL($quote, $detail); ?>" class="btn btn-sm btn-danger" aria-label="Delete Line" title="Delete Line">
 								<span class="fa fa-trash-o"></span>
 							</a>

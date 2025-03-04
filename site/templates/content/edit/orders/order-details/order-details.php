@@ -3,11 +3,11 @@
 	<strong>
 		<div class="col-md-9 sm-padding">
 			<div class="col-sm-4 sm-padding">Item / Description</div>
-			<div class="col-sm-1 text-left sm-padding">WH</div>
+			<div class="col-sm-1 text-right sm-padding">WH</div>
 			<div class="col-sm-1 text-right sm-padding">Qty</div>
-			<div class="col-sm-2 text-center sm-padding">Price</div>
-			<div class="col-sm-2 sm-padding">Total</div>
-			<div class="col-sm-2 sm-padding">Rqst Date</div>
+			<div class="col-sm-2 text-right sm-padding">Price</div>
+			<div class="col-sm-2 text-right sm-padding">Total</div>
+			<div class="col-sm-2 text-right sm-padding">Rqst Date</div>
 		</div>
 		<div class="col-md-3 sm-padding">
 			<div class="row">
@@ -88,7 +88,7 @@
 				                    <i class="fa fa-file-text" aria-hidden="true"></i>
 				                </a>
 				            <?php endif; ?>
-							
+
 							<!--  Notes Link -->
 							<?php if ($detail->has_notes()) : ?>
 								<a href="<?= $editorderdisplay->generate_request_dplusnotesURL($order, $detail->linenbr); ?>" class="load-notes" title="View Order Notes" data-modal="<?= $editorderdisplay->modal; ?>">
